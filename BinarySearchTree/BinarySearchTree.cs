@@ -14,7 +14,7 @@ namespace BinarySearchTree
             root = null;
         }
 
-        public bool Search(int data) // return bool? possibly whether exists
+        public bool Search(int data)
         {            
             if (root == null)
             {
@@ -25,7 +25,7 @@ namespace BinarySearchTree
                 Node current = root;
                 while (true)
                 {
-                    if (data <= current.data)
+                    if (data < current.data)
                     {
                         if (current.leftNode == null)
                         {

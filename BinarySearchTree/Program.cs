@@ -19,8 +19,8 @@ namespace BinarySearchTree
             bst.Add(25);
             bst.Add(25);
             bst.Add(27);
-            bst.Search(27);
-            bst.Search(53);
+            bool search27 = bst.Search(27);
+            bool search53 = bst.Search(53);
         
             Console.ReadLine();
 
