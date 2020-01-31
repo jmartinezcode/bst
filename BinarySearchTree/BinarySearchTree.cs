@@ -14,20 +14,39 @@ namespace BinarySearchTree
             root = null;
         }
 
-        public Node Search(int data, Node node) // return bool? possibly whether exists
-        {
-            if (node == null || node.data == data)
+        public bool Search(int data) // return bool? possibly whether exists
+        {            
+            if (root == null)
             {
-                return node;
-            }
-            if (data < node.data )
-            {
-                return Search(data, node.leftNode);
+                return false;
             }
             else
             {
-                return Search(data, node.rightNode);
-            }
+                Node current = root;
+                while (true)
+                {
+                    if (data <= current.data)
+                    {
+                        if (current.leftNode == null)
+                        {
+                            return false;
+                        }
+                        current = current.leftNode;
+                    }
+                    else if (data > current.data)
+                    {
+                        if (current.rightNode == null)
+                        {
+                            return false;
+                        }
+                        current = current.rightNode;                        
+                    }
+                    else
+                    {                        
+                        return true;
+                    }
+                }
+            }            
         }
 
         public void Add(int data)
@@ -45,7 +64,7 @@ namespace BinarySearchTree
                 while (true)
                 {
                     parent = current;
-                    if (data < current.data)
+                    if (data <= current.data)
                     {
                         current = current.leftNode;
                         if (current == null)

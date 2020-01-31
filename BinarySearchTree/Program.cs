@@ -12,6 +12,18 @@ namespace BinarySearchTree
     {
         static void Main(string[] args)
         {
+            BinarySearchTree bst = new BinarySearchTree();
+            bst.Add(100);
+            bst.Add(55);
+            bst.Add(125);
+            bst.Add(25);
+            bst.Add(25);
+            bst.Add(27);
+            bst.Search(27);
+            bst.Search(53);
+        
+            Console.ReadLine();
+
         }
     }
 }
